@@ -202,25 +202,12 @@ let state = {
 };
 
 // ============================================
-// DOM ELEMENTS
+// DOM ELEMENTS (initialized in init())
 // ============================================
-const flipInner = document.getElementById('flip-inner');
-const flipBtn = document.getElementById('flip-btn');
-const flipBtnBack = document.getElementById('flip-btn-back');
-const startScreen = document.getElementById('start-screen');
-const readingScreen = document.getElementById('reading-screen');
-const readBtn = document.getElementById('read-btn');
-const wordDisplay = document.getElementById('word-display');
-const wordContainer = document.getElementById('word-container');
-const progressBar = document.getElementById('progress-bar');
-const wordCount = document.getElementById('word-count');
-const totalWords = document.getElementById('total-words');
-const speedValue = document.getElementById('speed-value');
-const diceBtn = document.getElementById('dice-btn');
-const heatmapGrid = document.getElementById('heatmap-grid');
-const prevMonthBtn = document.getElementById('prev-month');
-const nextMonthBtn = document.getElementById('next-month');
-const allTotal = document.getElementById('all-total');
+let flipInner, flipBtn, flipBtnBack, startScreen, readingScreen;
+let readBtn, wordDisplay, wordContainer, progressBar, wordCount;
+let totalWords, speedValue, diceBtn, heatmapGrid;
+let prevMonthBtn, nextMonthBtn, allTotal;
 
 // ============================================
 // STORAGE FUNCTIONS
@@ -575,6 +562,25 @@ function handleKeydown(event) {
 // INITIALIZATION
 // ============================================
 function init() {
+  // Get DOM elements
+  flipInner = document.getElementById('flip-inner');
+  flipBtn = document.getElementById('flip-btn');
+  flipBtnBack = document.getElementById('flip-btn-back');
+  startScreen = document.getElementById('start-screen');
+  readingScreen = document.getElementById('reading-screen');
+  readBtn = document.getElementById('read-btn');
+  wordDisplay = document.getElementById('word-display');
+  wordContainer = document.getElementById('word-container');
+  progressBar = document.getElementById('progress-bar');
+  wordCount = document.getElementById('word-count');
+  totalWords = document.getElementById('total-words');
+  speedValue = document.getElementById('speed-value');
+  diceBtn = document.getElementById('dice-btn');
+  heatmapGrid = document.getElementById('heatmap-grid');
+  prevMonthBtn = document.getElementById('prev-month');
+  nextMonthBtn = document.getElementById('next-month');
+  allTotal = document.getElementById('all-total');
+
   // Load initial text
   loadText(0);
 
