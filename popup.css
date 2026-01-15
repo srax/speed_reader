@@ -382,6 +382,8 @@ body {
   justify-content: center;
   align-items: center;
   gap: 20px;
+  overflow: visible;
+  padding-top: 20px;
 }
 
 /* Heatmap Wrapper */
@@ -389,6 +391,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  overflow: visible;
 }
 
 /* Navigation Arrows */
@@ -415,6 +418,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  overflow: visible;
 }
 
 .heatmap-months {
@@ -433,12 +437,14 @@ body {
 .heatmap-grid {
   display: flex;
   gap: 2px;
+  overflow: visible;
 }
 
 .heatmap-week {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  overflow: visible;
 }
 
 .heatmap-day {
@@ -476,13 +482,14 @@ body {
   transform: translateX(-50%);
   background: var(--bg-card);
   border: 1px solid var(--border);
-  padding: 3px 6px;
-  border-radius: 3px;
-  font-size: 9px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 10px;
   white-space: nowrap;
-  z-index: 10;
-  margin-bottom: 4px;
+  z-index: 100;
+  margin-bottom: 6px;
   color: var(--text);
+  pointer-events: none;
 }
 
 /* Heatmap Stats */
