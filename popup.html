@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speed Reader</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="flip-container">
+    <div class="flip-inner" id="flip-inner">
+
+      <!-- FRONT: Reading View -->
+      <div class="flip-face front">
+        <div class="container">
+          <!-- Header -->
+          <header class="header">
+            <span class="logo">SPEED READER</span>
+            <button class="flip-btn" id="flip-btn" title="View Streaks">
+              <svg class="flip-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11"/></svg>
+            </button>
+          </header>
+
+          <!-- Main Content -->
+          <main class="main">
+            <!-- Initial State: Read Button -->
+            <div id="start-screen" class="start-screen">
+              <button id="read-btn" class="read-btn">
+                <span class="btn-text">Read</span>
+              </button>
+              <p class="hint">Click to start reading</p>
+            </div>
+
+            <!-- Reading State: Word Display -->
+            <div id="reading-screen" class="reading-screen hidden">
+              <div class="word-container" id="word-container">
+                <span id="word-display" class="word-display"></span>
+              </div>
+              <div class="focus-line">
+                <div class="focus-marker"></div>
+              </div>
+
+              <!-- Dice Button -->
+              <button class="dice-btn" id="dice-btn" title="Random text">
+                <svg class="dice-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="12" height="12" x="2" y="10" rx="2" ry="2"/><path d="m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6"/><path d="M6 18h.01"/><path d="M10 14h.01"/><path d="M15 6h.01"/><path d="M18 9h.01"/></svg>
+              </button>
+
+              <!-- Progress Bar -->
+              <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+              </div>
+              <p class="progress-text"><span id="word-count">0</span> / <span id="total-words">0</span> words</p>
+            </div>
+          </main>
+
+          <!-- Footer: Speed Control -->
+          <footer class="footer">
+            <div class="speed-control">
+              <span class="speed-icon">&#8597;</span>
+              <div class="speed-display" id="speed-display">
+                <span class="speed-value" id="speed-value">900</span>
+                <span class="speed-unit">wpm</span>
+              </div>
+            </div>
+            <p class="scroll-hint">scroll to adjust speed</p>
+          </footer>
+        </div>
+      </div>
+
+      <!-- BACK: Heatmap/Streaks View -->
+      <div class="flip-face back">
+        <div class="container">
+          <!-- Header -->
+          <header class="header">
+            <span class="logo">YOUR STREAKS</span>
+            <button class="flip-btn" id="flip-btn-back" title="Back to Reader">
+              <svg class="flip-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 14 5-5-5-5"/><path d="M20 9H9.5A5.5 5.5 0 0 0 4 14.5A5.5 5.5 0 0 0 9.5 20H13"/></svg>
+            </button>
+          </header>
+
+          <!-- Heatmap Content -->
+          <main class="main heatmap-main">
+            <!-- Minimal Heatmap -->
+            <div class="heatmap-wrapper">
+              <button class="nav-arrow nav-prev" id="prev-month">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+
+              <div class="heatmap-container">
+                <div class="heatmap-months" id="heatmap-months"></div>
+                <div class="heatmap-grid" id="heatmap-grid"></div>
+              </div>
+
+              <button class="nav-arrow nav-next" id="next-month">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
+
+            <!-- Stats -->
+            <div class="heatmap-stats">
+              <span class="stat-value" id="all-total">0</span>
+              <span class="stat-label">sessions</span>
+            </div>
+          </main>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
