@@ -193,7 +193,7 @@ const texts = [
 // ============================================
 let state = {
   mode: 'idle', // idle | reading | paused | completed
-  wpm: 900,
+  wpm: 450,
   words: [],
   currentIndex: 0,
   textIndex: 0,
